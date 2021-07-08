@@ -7,18 +7,18 @@ read ensure
 
 
 
-mkdir results/scans/basic results/scans/basic/cmd_logs results/scans/more_detail results/scans/html results/scans/images
+mkdir basic basic/cmd_logs more_detail html images gowitness
 
-mv "results/scans/_full*" "results/scans/basic/".
-mv "results/scans/_quick*" "results/scans/basic/".
-mv "results/scans/_top_20*" "results/scans/basic/".
-mv "results/scans/_"* "results/scans/basic/cmd_logs/".
-mv "results/scans/tcp"*.txt "results/scans/more_detail/".
-mv "results/scans/"*.png "results/scans/images/".
-mv "results/scans/"*.html "results/scans/html/".
+mv _full* basic/.
+mv _quick* basic/.
+mv _top_20* basic/.
+mv _* basic/cmd_logs/.
+mv tcp*.txt more_detail/.
+mv *.png images/.
+mv *.html html/.
 
-for i in `'results/scans/basic/cmd_logs/'*`; do echo $i | cut -c 17- | tee filenames.txt; for name in `cat filenames.txt`; do mv $i 'results/scans/basic/cmd_logs/'$name; done; done
+for i in basic/cmd_logs/*; do cut -c 17- | tee filenames.txt; for name in `cat filenames.txt`; do mv $i 'basic/cmd_logs/'$name; done; done
 rm filenames.txt
 
-for i in `'results/scans/basic/'*.txt`; do echo $i | cut -c 8- | tee filenames.txt; for name in `cat filenames.txt`; do mv $i 'results/scans/basic/'$name; done; done
+for i in basic/*.txt; do cut -c 8- | tee filenames.txt; for name in `cat filenames.txt`; do mv $i 'basic/'$name; done; done
 rm filenames.txt
