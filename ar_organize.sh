@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "You must only run this on the 'results' folder output by AutoRecon"
+echo "You must only run this on the 'results/scans' folder output by AutoRecon"
 
 echo "ENSURE YOU ARE OUTSIDE OF THE RESULTS FOLDER AND THAT THIS SCRIPT IS RUN ON THE FOLDER ITSELF"
 read ensure
